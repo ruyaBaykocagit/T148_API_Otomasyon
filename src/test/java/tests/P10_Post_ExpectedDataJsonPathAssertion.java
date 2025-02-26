@@ -72,7 +72,7 @@ Response Body - Expected Data
         expBody.put("booking", reqBody);
 
         //3- response kaydet
-        Response response = given().contentType(ContentType.JSON).body(reqBody.toString()).post(url);
+        Response response = given().contentType(ContentType.JSON).when().body(reqBody.toString()).post(url);
 
         //4- Assertion yap
         // donen cevabı JsonPath formatına cevır
