@@ -41,7 +41,11 @@ public class P15_HerOkuAppQueryParams extends RESTFULL_BaseUrl {
  */
     @Test
     public void test01(){
+specRestFull.pathParam("pp1","booking").queryParam("firstname","Eric");
 
+Response response=given().spec(specRestFull).when().get("/{pp1}");
+
+response.then().assertThat().statusCode(200).body("size()",Matchers.greaterThan(0));
     }
 
 }
