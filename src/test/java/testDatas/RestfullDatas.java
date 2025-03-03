@@ -2,6 +2,9 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RestfullDatas {
 /*
        https://restful-booker.herokuapp.com/booking url’ine asagidaki body’ye sahip
@@ -85,6 +88,43 @@ public class RestfullDatas {
         return reqBody;
 
     }
+/*
+{
+           "firstname" : "Ahmet",
+           "lastname" : "Bulut",
+           "totalprice" : 500,
+           "depositpaid" : false,
+           "bookingdates" : {
+               "checkin" : "2021-06-01",
+               "checkout" : "2021-06-10"
+           },
+           "additionalneeds" : "wi-fi"
+       }
+ */
+public static Map<String,Object> mapDataOlustur(){
 
 
+
+
+    Map<String,Object>innerMapBody=new HashMap<>();
+    innerMapBody.put("checkin","2021-06-01");
+    innerMapBody.put("checkout","2021-06-10");
+
+
+    Map<String,Object>reqMapBody=new HashMap<>();
+    reqMapBody.put("firstname" , "Ahmet");
+    reqMapBody.put("lastname" , "Bulut");
+    reqMapBody.put("totalprice" , 500.0);
+    reqMapBody.put("depositpaid" , false);
+    reqMapBody.put("additionalneeds" , "wi-fi");
+    reqMapBody.put("bookingdates",innerMapBody);
+    return reqMapBody;
+}
+public static Map<String,Object>expMapDataOlustur(){
+
+    Map<String,Object> expMapBody= new HashMap<>();
+    expMapBody.put("bookingid",25);
+    expMapBody.put("booking",mapDataOlustur());
+    return expMapBody;
+}
 }

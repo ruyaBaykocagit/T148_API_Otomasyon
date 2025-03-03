@@ -2,6 +2,8 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class JPHDatas {
@@ -89,5 +91,24 @@ public class JPHDatas {
         jSonData.put("body",body);
 
         return jSonData;
+    }
+
+    public static Map<String,Object> MapDataOlustur(){
+
+        Map<String,Object>reqMap=new HashMap<>();
+        reqMap.put("userId",10.0);
+        reqMap.put("title","Ahmet");
+        reqMap.put("body","Merhaba");
+        reqMap.put("id",70.0);
+        return reqMap;
+    }
+
+    public static Map<String,Object> MAPDataOLusturPli(String title,String body, Double userId,Double id){
+        Map<String,Object>reqMap=new HashMap<>();
+        reqMap.put("userId",userId);
+        reqMap.put("title",title);
+        reqMap.put("body",body);
+        reqMap.put("id",id);
+        return reqMap;
     }
 }
