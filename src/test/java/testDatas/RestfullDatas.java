@@ -50,7 +50,7 @@ public class RestfullDatas {
         reqBody.put("lastname","Yiğit");
         reqBody.put("totalprice",1500);
         reqBody.put("depositpaid",true);
-        reqBody.put("bookingdate",bookingdates);
+        reqBody.put("bookingdates",bookingdates);
         reqBody.put("additionalneeds","wi-fi");
 
         return reqBody;
@@ -72,18 +72,15 @@ public class RestfullDatas {
         return bookingdates;
     }
 
-    public static JSONObject reqBodyOlustur2(String firstname, String lastname,int totalprice, boolean depositpaid, JSONObject bookingdate,String additionalneeds){
+    public static JSONObject reqBodyOlustur2(String firstname, String lastname,int totalprice, boolean depositpaid, JSONObject bookingdates,String additionalneeds){
 
-        JSONObject bookingdates=new JSONObject();
-        bookingdates.put("checkin" , "2021-06-01");
-        bookingdates.put("checkout" , "2021-06-10");
-        JSONObject reqBody=new JSONObject();
-        reqBody.put("firstname","Murat");
-        reqBody.put("lastname","Yiğit");
-        reqBody.put("totalprice",1500);
-        reqBody.put("depositpaid",true);
-        reqBody.put("bookingdate",bookingdates);
-        reqBody.put("additionalneeds","wi-fi");
+        JSONObject reqBody = new JSONObject();
+        reqBody.put("firstname", firstname);
+        reqBody.put("lastname", lastname);
+        reqBody.put("totalprice", totalprice);
+        reqBody.put("depositpaid", depositpaid);
+        reqBody.put("bookingdates", bookingdates); //bookindates olmalı bookingdate olmuş
+        reqBody.put("additionalneeds", additionalneeds);
 
         return reqBody;
 

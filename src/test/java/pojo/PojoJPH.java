@@ -3,7 +3,14 @@ package pojo;
 
 
 public class PojoJPH {
-
+/*
+{
+    "title": "Ahmet",
+    "body": "Merhaba",
+    "userId": 10,
+    "id": 70
+}
+ */
 
 //1- tüm variable lar private olarak olusturulur
     private String title;
